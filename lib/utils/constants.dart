@@ -1,11 +1,12 @@
 import 'package:bloc_cubit/main.dart';
+import 'package:bloc_cubit/topics/cubitcart/cubit_cart.dart';
 import 'package:bloc_cubit/topics/simplecubit/simplecubit.dart';
 import 'package:flutter/material.dart';
 
 final routes = <String, Map<String, dynamic>>{
-  // "page1": {"name": "Page 1", "view": const Page1()},
-  // "page2": {"name": "Page 2", "view": const Page1()}
-  "simplecubit": {"name": "Simple Cubit", "view": const SimpleCubit()}
+  // "": {"name": "", "view": const }
+  "simplecubit": {"name": "Simple Cubit", "view": const SimpleCubit()},
+  "cubitcart": {"name": "Cubit Cart", "view": const CubitCart()}
 };
 
 final kRoutes = <String, WidgetBuilder>{
