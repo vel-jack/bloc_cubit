@@ -7,8 +7,26 @@ class SimpleCubit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as String;
+    return BlocProvider<CounterCubit>(
+      create: (context) => CounterCubit(),
+      child: _RootAppWidget(title: args),
+    );
+  }
+}
+
+class _RootAppWidget extends StatelessWidget {
+  const _RootAppWidget({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Simple Cubit")),
+      appBar: AppBar(title: Text(title)),
       body: Center(
         child: BlocBuilder<CounterCubit, CounterInitial>(
           builder: (context, state) {
