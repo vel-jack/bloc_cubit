@@ -1,7 +1,5 @@
-import 'package:bloc_cubit/topics/simplecubit/cubit/counter_cubit.dart';
 import 'package:bloc_cubit/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,16 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CounterCubit>(
-      create: (context) => CounterCubit(),
-      child: MaterialApp(
-        title: 'Bloc Cubit',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        routes: kRoutes,
-        // home: const MyHomePage(title: 'Bloc & Cubit'),
+    return MaterialApp(
+      title: 'Bloc Cubit', debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      routes: kRoutes,
+      // home: const MyHomePage(title: 'Bloc & Cubit'),
     );
   }
 }
@@ -42,7 +37,8 @@ class MyHomePage extends StatelessWidget {
           return ListTile(
             title: Text('${routes[routeNames[index]]!["name"]}'),
             onTap: () {
-              Navigator.pushNamed(context, routeNames[index]);
+              Navigator.pushNamed(context, routeNames[index],
+                  arguments: routes[routeNames[index]]!["name"]);
             },
           );
         },
