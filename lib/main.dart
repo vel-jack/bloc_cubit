@@ -1,8 +1,11 @@
+import 'package:bloc/bloc.dart';
+import 'package:bloc_cubit/topics/cubitobserver/counter_observer.dart';
 import 'package:bloc_cubit/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  BlocOverrides.runZoned(() => runApp(const MyApp()),
+      blocObserver: CounterObserver());
 }
 
 class MyApp extends StatelessWidget {

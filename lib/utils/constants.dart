@@ -1,12 +1,17 @@
 import 'package:bloc_cubit/main.dart';
 import 'package:bloc_cubit/topics/cubitcart/cubit_cart.dart';
+import 'package:bloc_cubit/topics/cubitobserver/counter_view.dart';
 import 'package:bloc_cubit/topics/simplecubit/simplecubit.dart';
 import 'package:flutter/material.dart';
 
 final routes = <String, Map<String, dynamic>>{
   // "": {"name": "", "view": const }
   "simplecubit": {"name": "Simple Cubit", "view": const SimpleCubit()},
-  "cubitcart": {"name": "Cubit Cart", "view": const CubitCart()}
+  "cubitcart": {"name": "Cubit Cart", "view": const CubitCart()},
+  "cubitobserver": {
+    "name": "Cubit Observer",
+    "view": const ObserverCounterView()
+  }
 };
 
 final kRoutes = <String, WidgetBuilder>{
