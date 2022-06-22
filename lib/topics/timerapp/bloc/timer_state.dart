@@ -4,7 +4,7 @@ class TimerState extends Equatable {
   const TimerState(this.duration);
   final int duration;
   @override
-  List<Object?> get props => [int];
+  List<Object?> get props => [duration];
 }
 
 class TimerInitial extends TimerState {
